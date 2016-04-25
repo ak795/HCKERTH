@@ -1,0 +1,40 @@
+<div class="container" ng-controller="displayController" ng-init=start(flag)>
+
+     <br>
+     
+      <div>
+      <!--LIST DISPLAY FROM THE RESULT OF DISPLAY CONTROLLERS -->
+          <div ng-repeat="x in answer.result" >
+            <div class="container">
+
+                 <div class="col-md-4">
+                   <a><img ng-src={{x.image_url}}></a>
+                 </div>
+
+                 <div class="col-md-8" style="float:left">
+                      <p>Name: {{x.name}}</p>
+                      <p>Rating : {{x.rating}}</p>
+                      <p>SetupFee : {{x.setup_fee}}</p>
+                      <p>Transaction Fee : {{x.transaction_fee}}
+                      <p>Branding : {{x.branding}}</p>
+                      <p>Description: {{x.description}}</p>
+                      <p>Tutorial : <a href = {{x.how_to_url}}>Click here for Tutorial</a></p>
+                      <p></p>
+                      <p>Curriences : </p>
+                      <div ng-repeat="y in x.currencies">
+                      <p>{{y}}</p>
+
+                      </div>
+                      <br>
+                      <br>
+                      <br>
+
+                </div>
+
+          </div>
+        </div>
+
+        <br>
+
+   </div>
+ </div>

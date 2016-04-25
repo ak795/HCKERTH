@@ -1,0 +1,138 @@
+  <!DOCTYPE html>
+  <!-- define angular app -->
+  <html ng-app="testApp">
+
+  <head>
+    <!--
+    <meta charset="utf-8">    
+     <base href="/"> -->
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Official js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular-touch.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular-route.js"></script>
+
+  
+    <script src="script.js"></script>
+
+    <!--  Including all the js Controllers  -->
+
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/displayController.js"></script>
+    <script src="controllers/searchController.js"></script>
+
+
+    </head>
+
+  <!-- define angular controller -->
+  <body ng-controller="mainController" >
+
+    <!-- navigation bar -->
+    <nav style="background:#204060 !important" class="navbar navbar-default navbar-fixed-top">
+   
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" style="color:white" href="/">Test Application</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right ">
+        </ul>
+      </div>
+    </nav>
+
+
+      <br>
+      <br>
+      <br>
+    <!-- Search bar -->
+     <div class="row">
+        <div class="col-md-10 col-xs-10">
+          <input type="text" name="search" style="width:100%;margin-left:10px;height:40px;border-radius:5px;color:black;" alt="Submit" ng-model="search_value">
+
+        </div>
+
+
+
+
+        <div class="col-md-2 col-xs-2">
+             <a  ng-controller="searchController" ng-click="refresh1()" style="width:100%;height:40px;border-radius:5px;" class="btn btn-md btn-primary " href="#search">Search</a>
+        </div>
+
+     </div>
+
+
+    <!-- FILTERS -->
+    <div class="row">
+       <div class="col-md-2 col-xs-2" >
+
+        <div class="second" style="margin-left:5px">
+        <br>
+        <input type="checkbox" name="c21" ng-model="level1" > Branding 
+        <br>
+        <input type="checkbox" name="c21" ng-model="level2" > Setupfee
+        <br>
+        <input type="text" name="c2" ng-model="rating1"> Rating
+        </div>
+            
+          <br>
+          <a ng-controller="displayController" style="width:100%;border-radius:0px;color:white;background-color:#1a1a1a" type="submit" ng-click="refresh(1)" class="btn btn-secondary" href="#display"> Apply</a>
+
+          <br>
+          <br>
+          <br>
+          <br>
+
+                <!--GET COUNT BUTTON-->
+                <div>
+                <a style="width:100%;border-radius:0px;color:white;background-color:#1a1a1a" type="submit" ng-click="get_count()" class="btn btn-secondary" href="#home">Get Count</a>
+                <p></p>
+                </div>
+                <!--GET GATEWAY LIST BUTTON -->
+                <br>
+                <br>
+                <a ng-controller="displayController" style="width:100%;border-radius:0px;color:white;background-color:#1a1a1a" type="submit" ng-click="refresh(2)" class="btn btn-secondary" href="#display">Get GateWay List</a>
+
+                <!--SORTING BUTTON -->
+                <br>
+                <br>
+                <br>
+                <br>
+               <a ng-controller="displayController" style="width:100%;border-radius:0px;color:white;background-color:#1a1a1a" type="submit" ng-click="refresh(3)" class="btn btn-secondary" href="#display">Sort Ascending</a>
+
+
+        </div>
+
+
+
+
+
+    <!-- col-md-2 ends-->
+
+    <div class="col-md-8 col-xs-8" >
+
+              
+
+                  <!-- angular templating -->
+                  <!-- this is where content will be injected -->
+                  <div ng-view> </div>
+
+                
+
+    </div>
+    <div  class="col-md-2 col-xs-2">
+      <br>     
+    </div>
+
+</div>
+
+
+  <br>
+  </body>
+  <footer>
+</footer>
+</html>
